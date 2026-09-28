@@ -1,5 +1,4 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MS Chemistry · Topic 3 · Physical properties</title>
 <style>
 :root{--ink:#1d232b;--mid:#3a4650;--faint:#5b6570;--line:#d5dbe2;--bg:#f6f7f9;--card:#fff;--accent:#0b6d80;--accent2:#eef6f8;--good:#2e7d32;--bad:#b3261e;--warm:#fff3e0;--warmink:#8a4b00}
@@ -14,7 +13,7 @@ main{max-width:880px;margin:0 auto;padding:18px}
 .ltitle{font-weight:600}.lmeta{font-size:12px;color:var(--faint)}
 .tabs{display:flex;gap:6px;margin:8px 0 14px}.tabs button{border:1px solid var(--line);background:var(--card);padding:8px 14px;border-radius:999px;cursor:pointer;font-size:14px}.tabs button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
 .article p{margin:0 0 .55rem;font-size:17px}.article h3.sub{font-size:15px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin:22px 0 8px;padding-top:12px;border-top:1px solid var(--line)}.article p.rule{background:var(--accent2);border-left:4px solid var(--accent);padding:8px 12px;border-radius:6px;font-weight:600;margin:14px 0}
-figure{margin:14px 0;text-align:center}figure svg{max-width:100%;height:auto}figure img{max-width:100%;max-height:360px;border-radius:8px}figcaption{font-size:14px;color:var(--mid);margin-top:6px}figcaption .credit{display:block;font-size:12px;color:var(--faint)}
+figure{margin:14px 0;text-align:center}figure svg{max-width:100%;height:auto}figure img{max-width:100%;max-height:360px;border-radius:8px}figcaption{font-size:14px;color:var(--mid);margin-top:6px}figcaption .credit{display:block;font-size:12px;color:var(--faint)}.photo-missing{margin:0 auto;max-width:480px;padding:48px 20px;border:1.5px dashed var(--mid);border-radius:8px;background:var(--pale,#f3f3f3);color:var(--mid);font-size:14px}
 .script table{width:100%;border-collapse:collapse;font-size:15px}.script td{border-top:1px solid var(--line);padding:6px 8px;vertical-align:top}.script td.n{width:28px;color:var(--faint)}.script td.scr{width:38%;color:var(--faint);font-size:13px}
 .quiz .item{border-top:1px solid var(--line);padding:14px 0}.stem{font-size:17px;margin:0 0 8px}.opts button{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--card);font-size:16px;cursor:pointer}
 .opts button.ok{border-color:var(--good);background:#e8f5e9}.opts button.no{border-color:var(--bad);background:#fdecea}.opts button:disabled{cursor:default}
@@ -40,7 +39,8 @@ function save(){ localStorage.setItem('t01state', JSON.stringify(state)); }
 function shuffle(a, seed){ let x = seed||1; const r = () => { x = (x*9301+49297)%233280; return x/233280; }; const b=a.slice(); for(let i=b.length-1;i>0;i--){ const j=Math.floor(r()*(i+1)); [b[i],b[j]]=[b[j],b[i]]; } return b; }
 function fig(step){
   if(step.t==='fig'){ return `<figure>${D.figs[step.key]||'<p>missing figure '+esc(step.key)+'</p>'}<figcaption>${esc(step.cap||'')}</figcaption></figure>`; }
-  return `<figure><img src="img/photos/${esc(step.file)}" alt="${esc(step.cap)}"><figcaption>${esc(step.cap)}<span class="credit">${esc(step.credit||'')}</span></figcaption></figure>`;
+  // a photo slot whose file is not yet sourced renders as a drawn placeholder box, never the browser's broken-image glyph (T11 adjudication, 2026-09-25)
+  return `<figure><img src="img/photos/${esc(step.file)}" alt="${esc(step.cap)}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'photo-missing',textContent:'Photo to be sourced: '+this.alt}))"><figcaption>${esc(step.cap)}<span class="credit">${esc(step.credit||'')}</span></figcaption></figure>`;
 }
 function articleHTML(L){ return '<div class="article">' + L.article.map(st => st.t==='idea' ? `<p>${rich(st.text)}</p>` : st.t==='rule' ? `<p class="rule">${rich(st.text)}</p>` : st.t==='h' ? `<h3 class="sub">${rich(st.text)}</h3>` : fig(st)).join('') + '</div>'; }
 function saysYourTurn(beats){ return beats && beats.length && /your turn/i.test(beats[beats.length-1].say||''); }  // the script may already carry the close as its last beat
