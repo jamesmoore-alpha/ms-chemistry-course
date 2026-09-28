@@ -1,0 +1,110 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta name="robots" content="noindex, nofollow"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>MS Chemistry — course architecture v1 (for James&#x27;s approval, 25 September 2026)</title>
+<style>body{margin:0;font-family:-apple-system,Segoe UI,Helvetica,Arial,sans-serif;color:#1d232b;background:#f6f7f9;line-height:1.5}
+main{max-width:960px;margin:0 auto;padding:18px}h1{font-size:22px}h2{font-size:19px;margin:22px 0 8px;padding-top:14px;border-top:1px solid #d5dbe2}h3{font-size:16px}
+p,li{font-size:15px}.skill{font-size:12px;color:#5b6570}table{border-collapse:collapse;width:100%;font-size:14px;background:#fff;margin:10px 0}
+th,td{border:1px solid #d5dbe2;padding:6px 8px;text-align:left;vertical-align:top}th{background:#eef6f8}hr{border:0;border-top:1px solid #d5dbe2;margin:18px 0}
+code{background:#eef1f4;padding:1px 4px;border-radius:4px;font-size:13px}</style></head><body><main><p class="skill">Skill: course-build → atomise (architecture, step 6b gate) → write-like-james @ 4c9e849</p>
+<h1>MS Chemistry — course architecture v1 (for James&#x27;s approval, 25 September 2026)</h1>
+<p><b>Read this in five minutes.</b> It decides the topics, their order, where every PP100 sits, and which topic pilots first. Nothing below writes a lesson sentence. The atom register stays where it is: the Matter strand of the Science Knowledge Graph (92 atoms, JM-reviewed). This document arranges those 92 atoms into a course and stops.</p>
+<h2>The takeaways</h2>
+<ul>
+<li><b>Fourteen topics, one PP100 at the end of each, 92 lessons in all.</b> One atom, one lesson. Topics run 4 to 12 atoms; the average is 6 or 7.</li>
+<li><b>The order follows the big ideas, not the TEKS list</b>: what matter is and how particles explain it → what properties tell you → sorting matter into kinds → inside the atom and the periodic table → how matter changes → two grade-8 applications (water, acids and bases).</li>
+<li><b>Topic 1 is the pilot: &quot;Particles and the three states of matter&quot;, 12 lessons.</b> It stresses every treatment the course will need — a two-part test taught by examples, a fact, two &quot;explain the smell&quot; mechanisms, three example-sequence classifications, three particle-picture why-lessons, one coined term with a ranking routine. Its blueprint is the second deliverable.</li>
+<li><b>Density is its own topic.</b> It carries the course&#x27;s first two calculation routines, so it gets its own practice set and PP100 (vault ruling: a quantitative subtopic becomes its own topic).</li>
+<li><b>Three checkpoint tests</b>, at the three natural seams, anchored to the released grade-8 STAAR, Florida SSA and AZSCI forms. Grade-level slices remain derivable from the TEKS stamps if operations later want them.</li>
+<li><b>Five prerequisites live in other strands and are not taught here.</b> Each lesson that leans on one states it in a sentence and asks one recall question. Nothing is assumed (stand-alone entry rule).</li>
+<li><b>Seven register observations for your atomisation pass.</b> No atom was edited; the register is read-mostly.</li>
+</ul>
+<p><b>Status (25 September, later the same day):</b> you approved Topic 1 as the pilot and clarified delivery (video or article per atom, then questions). Card 5 records that. <b>The ask now:</b> approve or edit the Topic 1 blueprint (<code>course_preview/review/BLUEPRINT_T01.html</code>); lesson writing starts on your word.</p>
+<hr>
+<h2>Card 1 — The topics</h2>
+<p><b>The call: fourteen topics in the order below, a mixed mastery practice set then a PP100 at the end of every one.</b></p>
+<table><tr><th>#</th><th>Topic (student-facing title)</th><th>Atoms</th><th>Lessons</th><th>TEKS stamp</th><th>The big idea it serves</th></tr><tr><td>1</td><td>Particles and the three states of matter</td><td>MAT-001, 002, 003, 004, 016, 016b, 017, 017b, 018, 018b, 019, 019b</td><td>12</td><td>6.6A</td><td>Everything is made of moving particles; that explains solids, liquids and gases</td></tr><tr><td>2</td><td>Changing state</td><td>MAT-020, 021, 022, 023, 024, 025, 026, 026b</td><td>8</td><td>6.6A (NGSS MS-PS1-4)</td><td>Heating and cooling change how particles move, not what they are; mass holds</td></tr><tr><td>3</td><td>Physical properties</td><td>MAT-005, 006, 007, 012, 013</td><td>5</td><td>6.6D</td><td>Properties you can measure without changing the substance</td></tr><tr><td>4</td><td>Density</td><td>MAT-008, 009, 010, 011, 015</td><td>5</td><td>6.6D</td><td>A property that identifies a substance whatever the sample size</td></tr><tr><td>5</td><td>Pure substances and mixtures</td><td>MAT-027, 028, 029, 030, 032</td><td>5</td><td>6.6B</td><td>Sorting matter by how many kinds it contains</td></tr><tr><td>6</td><td>Solutions and separating mixtures</td><td>MAT-033, 034, 035, 036, 037, 038, 039, 040, 041</td><td>9</td><td>7.6D, 7.6E, pre-6.6B</td><td>A mixture keeps its parts&#x27; properties, so you can pull it apart</td></tr><tr><td>7</td><td>Atoms, elements, molecules and compounds</td><td>MAT-042, 042b, 043, 044, 045, 046, 047, 048</td><td>8</td><td>7.6A</td><td>One kind of atom or more than one: the particle-level sort</td></tr><tr><td>8</td><td>Inside the atom</td><td>MAT-049, 050, 051, 051b, 052</td><td>5</td><td>(NGSS MS-PS1-1; FL SC.8.P.8.7)</td><td>Protons decide which element an atom is</td></tr><tr><td>9</td><td>The periodic table</td><td>MAT-053, 054, 054b, 055, 056, 057, 058</td><td>7</td><td>6.6C</td><td>The table arranges elements so position predicts properties</td></tr><tr><td>10</td><td>Chemical formulas</td><td>MAT-059, 059b, 060, 061</td><td>4</td><td>7.6B</td><td>A formula counts atoms; change the count and you change the substance</td></tr><tr><td>11</td><td>Physical and chemical change</td><td>MAT-062, 063, 064, 064b, 065, 065b</td><td>6</td><td>7.6C</td><td>Did a new substance form? The one test, and its evidence</td></tr><tr><td>12</td><td>Chemical reactions and conservation of mass</td><td>MAT-066, 067, 068, 069, 069b, 070, 071, 072</td><td>8</td><td>8.6E, 8.6B</td><td>Reactions rearrange atoms; none appear or vanish, so mass holds</td></tr><tr><td>13</td><td>Water&#x27;s special properties</td><td>MAT-073, 074, 075, 076</td><td>4</td><td>8.6C</td><td>Water particles pull on each other and on other surfaces</td></tr><tr><td>14</td><td>Acids and bases</td><td>MAT-077, 078, 079, 080, 081, 082</td><td>6</td><td>8.6D</td><td>Two families of substance, one scale, and what happens when they meet</td></tr></table>
+<p>Totals: <b>92 lessons</b>, 14 practice sets, 14 PP100s (<b>280 items</b>), 3 checkpoint tests. Two atoms may need a second lesson once blueprinted — MAT-010 (calculate density) and MAT-061 (coefficients and parentheses) — so plan for 92 to 94.</p>
+<p><b>Why this grouping</b></p>
+<ul>
+<li>Every prerequisite edge in the register points backwards in this order. Checked atom by atom; no forward reference.</li>
+<li>Sub-domains 2 and 3 were each split in two (Topics 3/4 and 1/2). SD-3 has 16 atoms; a 20-item PP100 over 16 atoms certifies nothing. SD-2 bundles a calculation routine with observational properties.</li>
+<li>Topics 5 to 7 form one sort of matter in three passes: by how many substances (5), by whether it is a solution (6), by what the particles are (7). The full classification tree (MAT-047) closes Topic 7.</li>
+<li>Topics 13 and 14 sit last. Nothing depends on them, they are the register&#x27;s only pure grade-8 applications, and the checkpoint before them then covers a clean block.</li>
+</ul>
+<p><b>What changes:</b> the course folder gets one <code>topicNN_build/</code> folder per topic; Topic 1&#x27;s blueprint is written; nothing else is authored until you approve it.</p>
+<hr>
+<h2>Card 2 — Topic 1 is the pilot, at 12 lessons</h2>
+<p><b>The call: pilot &quot;Particles and the three states of matter&quot; end to end — 12 lessons, quiz after each, mixed practice, PP100 — before any other topic starts.</b></p>
+<p><b>Why</b></p>
+<ul>
+<li>The vertical-slice rule asks for a routine, a categorical concept and an explanation in the pilot. Topic 1 has all three: three example-sequence classifications (solid, liquid, gas), three why-lessons on the particle picture, a ranking routine that coins the course&#x27;s first technical term, and a transformation (heating speeds particles).</li>
+<li>It is the course&#x27;s foundation. Every later topic reuses its one particle picture and its four sentences about arrangement and movement.</li>
+<li>SD-1 alone (4 atoms) would pilot fast but would not test a PP100 worth the name, and has no routine.</li>
+</ul>
+<p><b>The alternative</b> is a 10/10 cut: move the two kinetic-energy atoms (MAT-019, 019b) to the front of Topic 2, where kinetic energy is the lever for melting. I kept them in Topic 1 because TEKS 6.6A names kinetic energy in the states comparison, and the ranking closes the three-box picture.</p>
+<p><b>What changes:</b> the Topic 1 blueprint is the next thing you read.</p>
+<hr>
+<h2>Card 3 — Density stands alone</h2>
+<p><b>The call: Topic 4 &quot;Density&quot; (5 atoms) is separate from Topic 3 &quot;Physical properties&quot; (5 atoms).</b></p>
+<p><b>Why</b></p>
+<ul>
+<li>Density carries two routines (displacement volume, MAT-008; calculate density, MAT-010) plus the sink-or-float prediction and the &quot;same whatever the sample size&quot; fact.</li>
+<li>Vault ruling (AP Biology, 10 Sep 2026): a topic test that mixes a calculation routine with a content topic hides which one failed.</li>
+<li>Solubility (MAT-012) and conductors (MAT-013) stay in Topic 3 as properties; Topic 6 retrieves solubility with a recall question.</li>
+</ul>
+<p><b>What changes:</b> two PP100s where the register had one sub-domain.</p>
+<hr>
+<h2>Card 4 — Checkpoints at three seams</h2>
+<p><b>The call: three static checkpoint tests, each with some free response, at the ends of Topics 6, 10 and 14; the third doubles as the end-of-course test and is anchored to released grade-8 STAAR, Florida SSA and AZSCI items.</b></p>
+<p><b>Why</b></p>
+<ul>
+<li>The seams are natural: Topics 1–6 are matter you can see and handle; 7–10 are the atom and its table; 11–14 are change and two applications.</li>
+<li>No state tests middle-school science before grade 8, so there is no per-grade instrument to anchor to (HANDOFF recommendation 1). The TEKS stamps (6.x/7.x/8.x on every atom) still allow a grade-level slice later without re-atomising.</li>
+<li>Five interchangeable forms per test is the standing ruling for topic tests; whether checkpoints also get five forms is your call.</li>
+</ul>
+<p><b>What changes:</b> nothing yet. Checkpoints are built after the topics they cover.</p>
+<hr>
+<h2>Card 5 — Delivery: video or article per atom, quiz straight after</h2>
+<p><b>The call: every lesson (one per atom) ships as BOTH a 40–90 second video and a short article, and the student chooses which to take; the quiz follows in the app, never inside the video. At topic end: mixed mastery practice (any format, key terms by recall), then the PP100 (20 MCQs, easy/medium/hard). No topic intro or summary videos.</b></p>
+<p><b>Why</b></p>
+<ul>
+<li>Your format ladder of 25 September, with your clarification the same day: each atom is a video with the option to read the article instead. The platform&#x27;s learner&#x27;s-choice mode carries exactly that.</li>
+<li>When video and text are alternatives, each must teach the whole part (vault rule), so the video script (write-video-script) and the article (write-lesson) are written from the same blueprint row and reviewed against each other.</li>
+<li>Pitched one notch up from the Grade 3 Forces pack: no title slide, open on the first example, rule stated last, everything appears on the word that names it. Middle school may carry a short &quot;why&quot; where Grade 3 stayed qualitative.</li>
+<li>The ladder names no intro or summary video. AP Biology and HS Chemistry ran different intro policies; I have not inherited either.</li>
+</ul>
+<p><b>Skills that run per lesson, in order:</b> write-lesson (dispatching by lesson type) for the article → write-video-script for the video → design-check-sequence then write-mcqs for the quiz → review-accuracy (a reader who did not write it, against the reference) → review-figures on every rendered figure → review-lesson (blind key read, guidance read, adjudication) → blind review of every key before anything ships.</p>
+<p><b>Figures:</b> the blueprint names the figure kind per part. Particle pictures are always monochrome SVG drawings, one depiction reused everywhere. Real scenes a student should recognise (a tea bag colouring water, sand pouring into a jar) are licensed stock photos where the photo carries the point; a drawing where the point is a measurement or a label.</p>
+<p><b>What changes:</b> the blueprint carries a delivery line and an SVG-or-photo call on every figure.</p>
+<hr>
+<h2>Card 6 — Five prerequisites are taught in other strands</h2>
+<p><b>The call: the five cross-strand prerequisites below are not taught in MS Chemistry. Each lesson that leans on one states the fact in one sentence and asks one recall question before using it.</b></p>
+<table><tr><th>External atom</th><th>What it says</th><th>Leaned on by</th></tr><tr><td>ENE-020</td><td>Temperature measures average particle motion</td><td>MAT-004 (Topic 1)</td></tr><tr><td>ENE-021</td><td>Heat flows from hot to cold</td><td>MAT-020–023 (Topic 2)</td></tr><tr><td>ENE-025</td><td>Thermal conductors and insulators</td><td>MAT-013 (Topic 3)</td></tr><tr><td>FOR-017</td><td>Spot a magnetic force</td><td>MAT-041 (Topic 6)</td></tr><tr><td>LIF-073</td><td>The photosynthesis word equation</td><td>MAT-072 (Topic 12)</td></tr></table>
+<p><b>Why</b></p>
+<ul>
+<li>Stand-alone entry rule: no student has taken the 3–5 courses or the sibling MS courses, so every lesson stands alone.</li>
+<li>One loop to know about: ENE-020 (Energy) lists MAT-002 and MAT-003 as its prerequisites, and MAT-004 lists ENE-020. Inside this course MAT-004 carries the &quot;hotter means faster particles&quot; idea itself; the Energy course will meet it as retrieval.</li>
+</ul>
+<p><b>What changes:</b> the blueprint&#x27;s &quot;leans on&quot; column names the external atom wherever it applies.</p>
+<hr>
+<h2>Card 7 — Register observations, no edits made</h2>
+<p><b>The call: seven observations for your atomisation pass. I changed nothing in the register.</b></p>
+<ol>
+<li><b>MAT-013</b> sorts materials as <i>thermal and electrical</i> conductors — two property families in one behaviour (the &quot;and&quot; audit). Candidate split.</li>
+<li><b>MAT-022</b> &quot;Evaporation and boiling&quot; — evaporation happens at the surface below the boiling point; boiling happens throughout at one temperature. Two predictions, one atom. Candidate split.</li>
+<li><b>MAT-050</b> states the charge <i>and</i> location of three particles — six facts in one contrast frame. HS Chemistry kept a similar profile atom whole as an argued exception; flagging for the same argument here.</li>
+<li><b>MAT-061</b> counts atoms with &quot;a coefficient, parentheses, or both&quot; — two routines, likely two lessons.</li>
+<li><b>MAT-019b</b> may not fail independently of MAT-019 in practice. Kept as its own lesson; the data decides (guide: never pre-emptively merge).</li>
+<li><b>MAT-004 → MAT-016/017/018.</b> Identifying a solid from its behaviour does not need &quot;heating speeds particles&quot;. The edge is honoured in the order, but it looks like a sequencing edge rather than a knowledge one.</li>
+<li><b>MAT-042 has no in-strand prerequisite</b> and enters via MAT5-084 only; Topic 7 must open with the particle picture from Topic 1 as its retrieval.</li>
+</ol>
+<p><b>What changes:</b> nothing until you rule. Atom edits happen in the knowledge-graph repo with a log entry.</p>
+<hr>
+<h2>About this build (kickoff record)</h2>
+<ul>
+<li><b>Register:</b> <code>Science Knowledge Graph/data/atoms/06-08/matter.json</code>, pulled 25 September 2026, 92 atoms in 13 sub-domains. Per-course choices are the register&#x27;s: K-8 IDs with letter suffixes; Fact / Categorical / Transformation / Routine; bare behaviours; verdict/reason split by default.</li>
+<li><b>Endpoint:</b> grade-8 STAAR, Florida SSA and AZSCI physical-science items; NGSS MS-PS1-1/2/4/5.</li>
+<li><b>Sources read:</b> knowledge-graph HANDOFF and CLAUDE; vault CLAUDE, 00 Protocol, the PP100 and build-process-v2 rulings, the blueprint rule; the Grade 3 Forces feedback log; the chemistry misconception research (particle model area). HS Chemistry Unit 1 was opened before this document was written; under your same-day correction it is reference only, and Topic 1&#x27;s scenes were chosen fresh.</li>
+<li><b>Coverage check</b> (standards mapped onto this architecture, never the other way): every Matter atom sits in exactly one topic; every TEKS 6.6/7.6/8.6 knowledge code in the register appears in at least one topic. Blank cells in the register (e.g. NGSS on solutions, TEKS on atomic structure) are register findings, not gaps in this course.</li>
+</ul>
+<h2>What happens next</h2>
+<p>You approve or edit the topic table. Then you read the Topic 1 blueprint. Only after that does write-lesson run on Topic 1, one lesson at a time, starting with the first of each lesson type as its exemplar.</p></main></body></html>
