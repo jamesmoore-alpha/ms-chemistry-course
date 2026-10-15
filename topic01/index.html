@@ -121,7 +121,7 @@ function render(){
   const h = location.hash || '#/'; const app = document.getElementById('app'); const parts = h.slice(2).split('/');
   for (const k in ITEMS) delete ITEMS[k];
   if(parts[0]===''){
-    app.innerHTML = `<div class="card blurb"><h2>${esc(D.topic.title)}</h2>${D.topic.blurb.map(p=>`<p>${esc(p)}</p>`).join('')}<p class="small">${D.lessons.length} lessons. Each one is a short video or an article — your choice — then a quiz. At the end: mixed practice, then the PP100.</p></div>` +
+    app.innerHTML = `<div class="card blurb"><h2>${esc(D.topic.title)}</h2>${D.topic.blurb.map(p=>`<p>${esc(p)}</p>`).join('')}<p class="small">${D.lessons.length} lessons. Each one is a short video or an article — your choice — then a quiz. At the end: the summary video, then the PP100.</p></div>` +
       `<div class="card"><h2>Topic intro video</h2><p class="small">Very brief. Names the topic's objects and raises its question. Teaches nothing.</p>${scriptTable(D.topic.intro_script, 'Intro video script', D.topic.intro_question, 'INTRO')}</div>` +
       `<div class="card"><h2>Lessons</h2><div class="lesson-list">` + D.lessons.map((L,i)=>`<a href="#/lesson/${L.id}/article"><span class="num">${i+1}</span><span><span class="ltitle">${esc(L.title)}</span><br><span class="lmeta">${esc(L.atom)} · ${esc(L.video)}</span></span></a>`).join('') +
       `<a href="#/summary"><span class="num">▶</span><span><span class="ltitle">Topic summary video</span><br><span class="lmeta">everything taught, in order, then straight to the PP100</span></span></a>` +
